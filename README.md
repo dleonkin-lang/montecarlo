@@ -2,7 +2,7 @@
 
 Простой статический проект для урока в 5 классе. Дети выбирают фигуру в квадрате 10×10, бросают случайные точки и смотрят, сколько точек оказалось внутри фигуры, а сколько снаружи.
 
-Онлайн-версия: https://rawcdn.githack.com/dleonkin-lang/montecarlo/main/index.html
+Онлайн-версия: https://rawcdn.githack.com/dleonkin-lang/montecarlo/93861af86e6195f80a8ce0422f7f809293979770/index.html
 
 QR-код для открытия сайта лежит в файле `qr-code.svg`.
 
