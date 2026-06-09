@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Случайные точки по фигурам</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Случайные точки по фигурам</h1>
+      <p>Выберите фигуру, бросьте точки в квадрат 10×10 и посмотрите, куда они попали.</p>
+    </header>
+
+    <main class="layout">
+      <div class="side-column">
+        <section class="control-panel" aria-label="Панель управления">
+          <h2>Панель управления</h2>
+
+          <label class="field-label" for="shape-select">Фигура</label>
+          <select id="shape-select"></select>
+          <p id="shape-description" class="shape-description"></p>
+
+          <div class="stats" aria-live="polite">
+            <p>Попало внутрь: <strong id="inside-count">0</strong></p>
+            <p>Попало наружу: <strong id="outside-count">0</strong></p>
+          </div>
+
+          <p id="last-point" class="last-point" aria-live="polite"></p>
+
+          <div class="button-grid" aria-label="Быстрый бросок точек">
+            <button type="button" data-drop-count="1">Бросить 1 точку</button>
+            <button type="button" data-drop-count="10">Бросить 10 точек</button>
+            <button type="button" data-drop-count="100">Бросить 100 точек</button>
+            <button type="button" data-drop-count="1000">Бросить 1000 точек</button>
+          </div>
+
+          <div class="custom-drop">
+            <label class="field-label" for="custom-count">Своё число точек</label>
+            <div class="custom-row">
+              <input id="custom-count" type="number" min="1" max="100000" step="1" value="50">
+              <button id="custom-drop-button" type="button">Бросить</button>
+            </div>
+          </div>
+
+          <label class="toggle">
+            <input id="grid-toggle" type="checkbox" checked>
+            <span>Показывать сетку</span>
+          </label>
+
+          <button id="reset-button" class="reset-button" type="button">Сбросить</button>
+
+          <section class="qr-card" aria-label="QR-код для открытия сайта">
+            <h2>QR-код</h2>
+            <img src="qr-code.svg" alt="QR-код для открытия сайта">
+            <a href="https://dleonkin-lang.github.io/montecarlo/" target="_blank" rel="noreferrer">
+              Открыть сайт
+            </a>
+          </section>
+        </section>
+
+      </div>
+
+      <section class="canvas-section" aria-label="Поле с рисунком">
+        <canvas id="experiment-canvas" width="900" height="900">
+          Ваш браузер не показывает canvas. Откройте страницу в современном браузере.
+        </canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
