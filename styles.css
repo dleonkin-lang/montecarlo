@@ -1,0 +1,282 @@
+:root {
+  --page-bg: #eef2f5;
+  --panel-bg: #ffffff;
+  --ink: #1e293b;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --strong-line: #334155;
+  --button: #1d4ed8;
+  --button-hover: #1740ad;
+  --button-light: #e0f2fe;
+  --button-light-hover: #bae6fd;
+  --focus: #f59e0b;
+  --inside: #15803d;
+  --outside: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.app-header {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 16px 24px 10px;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.app-header p {
+  max-width: 860px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  align-items: start;
+}
+
+.side-column {
+  display: grid;
+  gap: 16px;
+}
+
+.control-panel,
+.canvas-section {
+  background: var(--panel-bg);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.control-panel {
+  padding: 18px;
+}
+
+.control-panel h2 {
+  margin: 0 0 14px;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.field-label {
+  display: block;
+  margin: 14px 0 7px;
+  font-weight: 700;
+}
+
+select,
+input {
+  width: 100%;
+  min-height: 46px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  padding: 8px 10px;
+}
+
+select:focus,
+input:focus,
+button:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.shape-description {
+  min-height: 42px;
+  margin: 10px 0 16px;
+  color: var(--muted);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--button);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+.custom-drop {
+  margin-top: 12px;
+}
+
+.custom-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.custom-row button {
+  min-width: 118px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  font-weight: 700;
+}
+
+.toggle input {
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  accent-color: var(--button);
+}
+
+.stats {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.stats p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.stats strong {
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.last-point {
+  min-height: 30px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.reset-button {
+  width: 100%;
+  margin-top: 12px;
+  background: var(--button-light);
+  color: #0f172a;
+}
+
+.reset-button:hover {
+  background: var(--button-light-hover);
+}
+
+.qr-card {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid var(--line);
+  text-align: center;
+}
+
+.qr-card h2 {
+  margin-bottom: 10px;
+}
+
+.qr-card img {
+  display: block;
+  width: min(180px, 100%);
+  height: auto;
+  margin: 0 auto 10px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.qr-card a {
+  color: var(--button);
+  font-weight: 700;
+}
+
+.canvas-section {
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+canvas {
+  display: block;
+  width: min(100%, calc(100vh - 130px));
+  max-width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-column {
+    order: 2;
+  }
+
+  .canvas-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
+  .app-header,
+  .layout {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .custom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-row button {
+    width: 100%;
+  }
+}
